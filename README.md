@@ -40,7 +40,7 @@ Instead of manually creating dozens of folders and files when starting a project
 
 ## 🖼 Preview
 
-![Preview](./assets/preview.png)
+![Folder Structure Visualizer](./preview.png)
 
 ### Input
 
