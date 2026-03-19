@@ -40,7 +40,9 @@ Instead of manually creating dozens of folders and files when starting a project
 
 ## 🖼 Preview
 
-![Folder Structure Visualizer](./preview.png)
+<p align="center">
+  <img src="./preview.png" width="900"/>
+</p>
 
 ### Input
 
