@@ -25,6 +25,23 @@ Instead of manually creating dozens of folders and files when starting a project
 
 - **📦 Download Project Scaffold**
   Generate and download a ZIP containing the entire folder structure.
+  - **⚛️ React + Vite Preset**
+    Instantly generate a ready-to-run React + Vite frontend scaffold.
+
+- **🎨 Tailwind CSS Preset**
+  Add Tailwind CSS configuration and generate a styled starter homepage.
+
+- **🟦 TypeScript (TSX) Preset**
+  Generate TSX-based React scaffolds with `App.tsx`, `main.tsx`, `vite.config.ts`, and TypeScript config files.
+
+- **🧩 Node + Express Preset**
+  Generate a backend starter with Express and a clean folder structure.
+
+- **🖥 Custom Starter Screens**
+  Generated React scaffolds include a branded startup homepage with setup instructions.
+
+- **⚠️ Vite 8 Node Warning**
+  Generated frontend scaffolds show a built-in Node.js version warning for Vite 8 compatibility.
 
 - **🚫 Smart Ignore Rules**
   Automatically filters out generated folders like
@@ -33,7 +50,8 @@ Instead of manually creating dozens of folders and files when starting a project
 - **🖱 Drag & Drop Input**
   Drop ASCII trees directly into the editor.
 
-- **😖 Supports both standard ASCII trees (├──, └──, │) and indentation-based structures.**
+- **🧠 Flexible Parsing**
+  Supports both standard ASCII trees (├──, └──, │) and indentation-based structures.
   Indentation is only valid under folders (lines ending with /).
 
 ---
@@ -75,15 +93,65 @@ The **Download ZIP** feature creates a project scaffold where the ZIP file is au
 > ⚠️ **Important**
 > All files are generated as **empty files**, allowing developers to start coding immediately without manually creating folders and files.
 
+### Included Scaffold Presets
+
+The scaffold system can optionally generate starter files for:
+
+- **React + Vite**
+- **React + Vite + Tailwind CSS**
+- **React + Vite + TypeScript (TSX)**
+- **React + Vite + TypeScript (TSX) + Tailwind CSS**
+- **Node + Express API**
+- **Root `.gitignore`**
+
+## These presets are merged into the parsed folder tree and exported as part of the ZIP.
+
 ---
 
 ## 🛠 Tech Stack
 
 - **Framework:** React (Vite)
-- **Language:** JavaScript
-- **Styling:** CSS
+- **Languages:** JavaScript, TypeScript
+- **Styling:** CSS, Tailwind CSS
+- **Backend Preset:** Node.js, Express
 - **Icons:** Lucide React & React Icons
 - **ZIP Generation:** JSZip
+
+---
+
+## ⚛️ Generated Frontend Presets
+
+When scaffold options are selected, the exported ZIP can generate frontend starter projects with:
+
+### JSX Preset
+
+- `App.jsx`
+- `main.jsx`
+- `vite.config.js`
+
+### TSX Preset
+
+- `App.tsx`
+- `main.tsx`
+- `vite.config.ts`
+- `vite-env.d.ts`
+- `tsconfig.json`
+- `tsconfig.app.json`
+- `tsconfig.node.json`
+
+### Tailwind Support
+
+When Tailwind is enabled, the scaffold also includes:
+
+- `tailwind.config.js`
+- `postcss.config.js`
+
+### Vite 8 Compatibility Note
+
+Generated frontend starter pages include a visible warning that Vite 8 requires:
+
+- **Node.js 20.19+**, or
+- **Node.js 22.12+**
 
 ---
 
@@ -139,16 +207,16 @@ http://localhost:5173
 - **Repo Visualization** – Understand complex repository structures instantly.
 - **Architecture Sharing** – Share project designs with teammates.
 - **Documentation** – Generate clean trees for README files.
+- **Preset-Based Project Bootstrapping** – Generate React, TSX, Tailwind, and Express starter structures instantly.
 
 ---
 
 ## 🔮 Future Improvements
 
-- [ ] VSCode-style tree guide lines
-- [ ] Import folder structure directly from a GitHub URL
-- [ ] Export structure as JSON
-- [ ] User-defined custom ignore rules
-- [ ] Dark/light theme toggle
+- [ ] README auto-generation for exported projects
+- [ ] Preset variants (Minimal / Standard / Production-ish)
+- [ ] Custom starter pages and branding options
+- [ ] Export GitHub-ready repository metadata
 
 ---
 
