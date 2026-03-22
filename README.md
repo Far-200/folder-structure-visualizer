@@ -152,6 +152,14 @@ The **Download ZIP** feature creates a project scaffold where the ZIP file is au
 > ⚠️ **Important**
 > All files are generated as **empty files**, allowing developers to start coding immediately without manually creating folders and files.
 
+> ⚠️ **Note**
+> The scaffold system may occasionally generate a few **extra folders or files** (e.g., `src/utils/`) that were **not explicitly defined** in the ASCII tree.
+>
+> This happens because certain presets (React, Vite, Tailwind, etc.) include **framework-required or helper directories** to ensure the project runs out of the box.
+>
+> These additions are **non-breaking** and safe to remove.  
+> If they are not needed for your project, feel free to **delete them ("yeet them")** without affecting functionality.
+
 ### Included Scaffold Presets
 
 The scaffold system can optionally generate starter files for:
