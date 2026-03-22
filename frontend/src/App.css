@@ -325,6 +325,74 @@
   padding-right: 6px;
 }
 
+/* Tree Search Feature */
+.tree-searchbar {
+  position: relative;
+  margin: 12px 0 16px;
+}
+
+.tree-search-input {
+  width: 100%;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(15, 23, 42, 0.72);
+  color: #e5e7eb;
+  border-radius: 14px;
+  padding: 12px 42px 12px 14px;
+  font-size: 0.95rem;
+  outline: none;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.tree-search-input::placeholder {
+  color: #94a3b8;
+}
+
+.tree-search-input:focus {
+  border-color: rgba(99, 102, 241, 0.65);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.16);
+  background: rgba(15, 23, 42, 0.92);
+}
+
+.tree-search-clear {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 8px;
+  transition:
+    color 0.18s ease,
+    background 0.18s ease;
+}
+
+.tree-search-clear:hover {
+  color: #f8fafc;
+  background: rgba(148, 163, 184, 0.12);
+}
+
+.tree-row-match {
+  background: rgba(59, 130, 246, 0.06);
+}
+
+.tree-label-highlight {
+  background: rgba(250, 204, 21, 0.22);
+  color: #fef08a;
+  padding: 0 2px;
+  border-radius: 4px;
+}
+
+.tree-label-match {
+  color: #f8fafc;
+}
+
 .input-panel::-webkit-scrollbar,
 .tree-scroll-area::-webkit-scrollbar {
   width: 8px;
@@ -406,7 +474,7 @@
 }
 
 .tree-filetype-icon {
-  width: 18px;
+  width: 22px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -423,10 +491,18 @@
 
 .tree-icon {
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.15s ease;
+}
+
+.tree-row:hover .tree-icon {
+  transform: scale(1.12) translateY(-1px);
 }
 
 .folder-icon {
   color: #facc15;
+  transition: transform 0.2s ease;
 }
 
 .file-icon {
@@ -483,6 +559,38 @@
 
 .image-icon {
   color: #a78bfa;
+}
+
+.java-icon {
+  color: #f89820;
+}
+
+.python-icon {
+  color: #3776ab;
+}
+
+.c-icon {
+  color: #5c6bc0;
+}
+
+.cpp-icon {
+  color: #659ad2;
+}
+
+.sql-icon {
+  color: #4db6ac;
+}
+
+.xml-icon {
+  color: #fb8c00;
+}
+
+.archive-icon {
+  color: #f59e0b;
+}
+
+.shell-icon {
+  color: #94a3b8;
 }
 
 /* Bottom path bar */
@@ -1008,4 +1116,53 @@
   background: rgba(255, 255, 255, 0.06);
   color: #f8fafc;
   font-family: Consolas, "Fira Code", monospace;
+}
+
+/*Folder Open Animations */
+.tree-children {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.22s ease,
+    opacity 0.18s ease;
+}
+
+.tree-children-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.tree-children-inner > * {
+  animation: fadeInUp 0.2s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Chevron Animations */
+.tree-chevron-icon {
+  transition: transform 0.2s ease;
+}
+
+.tree-chevron-open {
+  transform: rotate(90deg);
+}
+
+/* Tactile Clicks */
+.tree-row:active {
+  transform: scale(0.98);
+}
+
+/* Open Folder Icon Animations */
+.tree-row.tree-selected {
+  box-shadow: inset 2px 0 0 #6366f1;
 }
