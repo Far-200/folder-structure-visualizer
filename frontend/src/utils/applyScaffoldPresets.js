@@ -221,7 +221,8 @@ ReactDOM.createRoot(document.getElementById("root")${
 
 function getConnectedReactAppFile({ withTailwind, withTypeScript }) {
   if (withTailwind) {
-    return `import { useEffect, useState } from "react";
+    if (withTypeScript) {
+      return `import { useEffect, useState } from "react";
 
 type BackendState = {
   ok: boolean;
@@ -264,7 +265,117 @@ export default function App() {
             </span>
 
             <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-white md:text-6xl">
-              React + Vite + Tailwind ${withTypeScript ? "TSX + " : ""}Express scaffold ready
+              React + Vite + Tailwind TSX + Express scaffold ready
+            </h1>
+
+            <p className="mt-4 max-w-3xl text-base leading-7 text-slate-400 md:text-lg">
+              Your frontend and backend starters were generated already wired together.
+              The frontend calls <code className="rounded bg-white/10 px-2 py-1 text-slate-100">/api/status</code>
+              through the Vite proxy.
+            </p>
+
+            <div className="mt-6 rounded-2xl border border-amber-400/25 bg-amber-500/10 p-4 text-amber-100">
+              <p className="text-sm font-extrabold tracking-wide text-amber-50">
+                Node.js requirement
+              </p>
+              <p className="mt-2 text-sm leading-6 text-amber-100/90">
+                ${reactWarningText}{" "}
+                <code className="rounded bg-white/10 px-2 py-1 text-slate-100">
+                  npm install
+                </code>{" "}
+                in both apps, then run{" "}
+                <code className="rounded bg-white/10 px-2 py-1 text-slate-100">
+                  npm run dev
+                </code>{" "}
+                in frontend and backend.
+              </p>
+            </div>
+
+            <div className="mt-8 rounded-2xl border border-slate-700/40 bg-white/5 p-5">
+              <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-slate-300">
+                Connection status
+              </p>
+
+              <div
+                className={[
+                  "mt-4 inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold",
+                  status === "loading"
+                    ? "border border-amber-400/30 bg-amber-500/15 text-amber-200"
+                    : status === "success"
+                    ? "border border-emerald-400/30 bg-emerald-500/15 text-emerald-200"
+                    : "border border-rose-400/30 bg-rose-500/15 text-rose-200",
+                ].join(" ")}
+              >
+                {status === "loading"
+                  ? "Checking backend..."
+                  : status === "success"
+                  ? "Backend connected"
+                  : "Backend not reachable"}
+              </div>
+
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-300">
+                {message}
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-3">
+              <div className="rounded-2xl border border-slate-700/40 bg-white/5 p-4 text-slate-200">
+                Frontend calls <code className="rounded bg-white/10 px-2 py-1">/api/status</code>
+              </div>
+              <div className="rounded-2xl border border-slate-700/40 bg-white/5 p-4 text-slate-200">
+                Vite proxy forwards requests to <code className="rounded bg-white/10 px-2 py-1">http://localhost:5000</code>
+              </div>
+              <div className="rounded-2xl border border-slate-700/40 bg-white/5 p-4 text-slate-200">
+                Start both apps and get straight to building
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  );
+}`;
+    }
+
+    return `import { useEffect, useState } from "react";
+
+export default function App() {
+  const [status, setStatus] = useState("loading");
+  const [message, setMessage] = useState("Checking backend connection...");
+
+  useEffect(() => {
+    const checkBackend = async () => {
+      try {
+        const response = await fetch("/api/status");
+        if (!response.ok) {
+          throw new Error("Backend health check failed");
+        }
+
+        const data = await response.json();
+        setStatus("success");
+        setMessage(data.message || "Frontend and backend are connected.");
+      } catch (error) {
+        setStatus("error");
+        setMessage(
+          "Frontend is running, but backend is not reachable yet. Start the backend and refresh."
+        );
+      }
+    };
+
+    checkBackend();
+  }, []);
+
+  return (
+    <main className="min-h-screen bg-slate-950 text-slate-100">
+      <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(99,102,241,0.18),transparent_30%),radial-gradient(circle_at_top_right,rgba(56,189,248,0.10),transparent_28%),linear-gradient(180deg,#020617_0%,#071127_100%)] px-6 py-10">
+        <div className="mx-auto grid min-h-[80vh] max-w-5xl place-items-center">
+          <section className="w-full rounded-3xl border border-slate-700/40 bg-slate-900/70 p-8 shadow-2xl backdrop-blur-xl md:p-10">
+            <span className="inline-flex rounded-full border border-indigo-400/25 bg-indigo-500/15 px-3 py-2 text-sm font-semibold text-indigo-200">
+              Generated by Folder Structure Visualizer
+            </span>
+
+            <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-white md:text-6xl">
+              React + Vite + Tailwind Express scaffold ready
             </h1>
 
             <p className="mt-4 max-w-3xl text-base leading-7 text-slate-400 md:text-lg">

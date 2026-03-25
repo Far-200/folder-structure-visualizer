@@ -160,6 +160,9 @@ The **Download ZIP** feature creates a project scaffold where the ZIP file is au
 > These additions are **non-breaking** and safe to remove.  
 > If they are not needed for your project, feel free to **delete them ("yeet them")** without affecting functionality.
 
+> ⚠️ **Fixed**
+> An issue where Tailwind CSS imports TS by default even if the TypeScript checkbox was not checked.
+
 ### Included Scaffold Presets
 
 The scaffold system can optionally generate starter files for:
