@@ -27,6 +27,12 @@ function collectFolderPaths(nodes, parentPath = "") {
   return paths;
 }
 
+const DEFAULT_PLACEMENT_CONFIG = {
+  mode: "root",
+  targetFolder: "",
+  parentPath: "",
+};
+
 function App() {
   const [rawTreeData, setRawTreeData] = useState([]);
   const [selectedPath, setSelectedPath] = useState("");
@@ -42,11 +48,9 @@ function App() {
     gitignore: false,
   });
 
-  const [placementConfig, setPlacementConfig] = useState({
-    mode: "root",
-    targetFolder: "",
-    parentPath: "",
-  });
+  const [placementConfig, setPlacementConfig] = useState(
+    DEFAULT_PLACEMENT_CONFIG,
+  );
 
   const treeData = useMemo(() => {
     return applyScaffoldPresets(rawTreeData, scaffoldOptions, placementConfig);
@@ -94,11 +98,7 @@ function App() {
       scaffoldOptions.reactVite || scaffoldOptions.expressBackend;
 
     if (!appScaffoldsEnabled) {
-      setPlacementConfig({
-        mode: "root",
-        targetFolder: "",
-        parentPath: "",
-      });
+      setPlacementConfig(DEFAULT_PLACEMENT_CONFIG);
     }
   }, [scaffoldOptions.reactVite, scaffoldOptions.expressBackend]);
 

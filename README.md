@@ -202,6 +202,22 @@ You need:
 
 ---
 
+### 7 Module System Behavior (Advanced)
+
+The generated project uses different module systems:
+
+- Frontend → ES Modules `(type: "module")`
+- Backend (JS mode) → CommonJS `(require)`
+
+This is intentional for compatibility and simplicity.
+
+⚠️ If you modify backend to use ESM, you must update:
+
+- `package.json`
+- import syntax (`import` instead of `require`)
+
+---
+
 ## ⚛️ Generated Frontend Structure
 
 ### JSX Mode
@@ -226,10 +242,11 @@ You need:
 
 ## 🧠 How It Works
 
-1. Parse ASCII → JSON tree
-2. Render interactive UI
-3. Merge presets into structure
-4. Generate ZIP using JSZip
+1. Parse ASCII → structured JSON tree
+2. Render interactive collapsible UI
+3. Merge scaffold presets into user-defined structure
+4. Replace empty config placeholders with working defaults
+5. Generate production-ready ZIP using JSZip
 
 ---
 
@@ -262,6 +279,8 @@ This tool has been tested with:
 - Parser is flexible, not strict — expects reasonable ASCII format
 - Custom placement can confuse users if they run wrong folders (Trust me on this 🫠)
 - Not designed for malformed or inconsistent tree syntax
+- Mixing ESM (frontend) and CommonJS (backend JS mode) can confuse beginners
+- Large template strings in codebase (planned extraction into modular templates)
 
 ---
 
@@ -280,6 +299,8 @@ This tool has been tested with:
 - Dynamic scaffold generator
 - Real working full-stack output
 - Practical developer tool (not just UI demo)
+- Smart placeholder replacement system (prevents broken configs)
+- Dynamic preset merging with conflict-safe tree injection
 
 ---
 
@@ -297,9 +318,11 @@ So I turned it into this.
 
 ## 🔮 Future Improvements
 
-- README generation for exported projects
-- More preset variations
-- Better placement UX hints
+- Extract scaffold templates into modular files (better maintainability)
+- Add more backend presets (FastAPI, NestJS, etc.)
+- README auto-generation for exported projects
+- Improved placement guidance in UI
+- Better validation for malformed ASCII input
 
 ---
 

@@ -876,6 +876,10 @@ export default {
   };
 }
 
+// ⚠️ NOTE:
+// This backend scaffold uses CommonJS (require).
+// Frontend uses ESM ("type": "module").
+// Mixing both without proper config can break Node runtime.
 function createExpressPreset(
   withFrontendConnection = false,
   withTypeScript = false,
@@ -1024,7 +1028,8 @@ app.listen(PORT, () => {
             name: "server.js",
             type: "file",
             content: withFrontendConnection
-              ? `const express = require("express");
+              ? // CommonJS import (JS version)
+                `const express = require("express");
 const cors = require("cors");
 
 const app = express();
