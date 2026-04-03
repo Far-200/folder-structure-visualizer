@@ -12,6 +12,23 @@ Paste a structure → visualize it → export a working project.
 
 ---
 
+##Preview
+
+### Preview
+
+![Preview](assets/preview.png)
+
+### Search Features
+
+![Search](assets/search_feature.png)
+![Search](assets/search_feature_2.png)
+
+### Example Uses
+
+![Example](assets/example_use.png)
+
+---
+
 ## ✨ Core Features
 
 ### 📂 ASCII → Visual Tree
@@ -243,7 +260,7 @@ This tool has been tested with:
 ## ⚠️ Known Limitations
 
 - Parser is flexible, not strict — expects reasonable ASCII format
-- Custom placement can confuse users if they run wrong folders
+- Custom placement can confuse users if they run wrong folders (Trust me on this 🫠)
 - Not designed for malformed or inconsistent tree syntax
 
 ---
