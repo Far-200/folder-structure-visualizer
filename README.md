@@ -14,6 +14,8 @@ Paste a structure → visualize it → export a working project.
 
 ## Preview
 
+### Main Interface
+
 ![Preview](assets/preview.png)
 
 ### Search Features
