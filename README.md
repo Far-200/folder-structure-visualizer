@@ -6,7 +6,7 @@
   </a>
 </p>
 
-Turn ASCII folder trees into working React + Node projects in seconds — generating **ready-to-run project scaffolds**.
+Turn ASCII folder trees into working React + Node projects in seconds.
 
 Paste a structure → visualize it → export a working project.
 
@@ -304,9 +304,11 @@ This tool has been tested with:
 
 ---
 
-## Why This Exists
+## 🥲 Why This Exists
 
-I didn’t want to manually create 50 folders and 70 files for a project.
+I didn’t want to manually create 50 folders and 70 files for a project. I'm too lazy for that.
+
+I needed something that would skip the structure trap and get me to the actual coding faster.
 
 So I built a tool to do it for me.
 
