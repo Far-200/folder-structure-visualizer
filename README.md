@@ -84,8 +84,9 @@ Yes — it actually runs. Not fake files.
 
 #### ⚠️ Small note of caution:
 
-- If, after clicking the "Parse Structure" button and the root project name changes to whatever you gave, it means the structure got parsed correctly.
-- Else, check the ASCII structure once.
+##### - If, after clicking the "Parse Structure" button and the root project name changes to whatever you gave, it means the structure got parsed correctly.
+
+##### - Else, check the ASCII structure once.
 
 ### 1. Root vs Custom Placement
 
