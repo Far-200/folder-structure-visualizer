@@ -327,6 +327,7 @@ So I turned it into this.
 - README auto-generation for exported projects
 - Improved placement guidance in UI
 - Better validation for malformed ASCII input
+- ⚠️ Halting Development due to college exams🫠
 
 ---
 
