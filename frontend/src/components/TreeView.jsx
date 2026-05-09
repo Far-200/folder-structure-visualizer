@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { Search } from "lucide-react";
 import TreeNode from "./TreeNode";
 
 function normalize(text) {
@@ -103,12 +104,18 @@ function TreeView({
     <div className="tree-wrap">
       <div className="section-head">
         <div>
-          <h2>Folder Tree</h2>
+          <div className="section-label">
+            <span className="section-dot" />
+            <h2>Folder Tree</h2>
+          </div>
           <p>Visualized output of the parsed structure</p>
         </div>
       </div>
 
       <div className="tree-searchbar">
+        <span className="search-icon">
+          <Search size={14} />
+        </span>
         <input
           type="text"
           value={searchQuery}
@@ -131,11 +138,13 @@ function TreeView({
       <div className="tree-scroll-area">
         {treeData.length === 0 ? (
           <div className="empty-state">
+            <div className="empty-state-icon">🌲</div>
             <p>No structure parsed yet.</p>
             <span>Paste a tree on the left, then hit Parse Structure.</span>
           </div>
         ) : !hasVisibleMatches ? (
           <div className="empty-state">
+            <div className="empty-state-icon">🔍</div>
             <p>No matches found.</p>
             <span>Try a different file or folder name.</span>
           </div>

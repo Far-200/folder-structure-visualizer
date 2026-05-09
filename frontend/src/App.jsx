@@ -182,13 +182,16 @@ function App() {
   return (
     <div className="app-shell">
       <header className="app-header">
-        <div>
-          <p className="app-kicker">Dev Tool</p>
-          <h1>Folder Structure Visualizer</h1>
-          <p className="app-subtitle">
-            Paste an ASCII folder tree and explore it like a real project
-            structure.
-          </p>
+        <div className="header-brand">
+          <div className="header-logo">🌲</div>
+          <div className="header-text">
+            <p className="app-kicker">Dev Tool</p>
+            <h1>Folder Structure Visualizer</h1>
+          </div>
+        </div>
+        <div className="header-badge">
+          <span className="header-badge-dot" />
+          ASCII → Visual Tree
         </div>
       </header>
 

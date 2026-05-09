@@ -57,8 +57,11 @@ function InputPanel({ setTreeData }) {
     <div className="input-wrap">
       <div className="section-head">
         <div>
-          <h2>Paste Folder Structure</h2>
-          <p>Supports standard ASCII trees using ├──, └── and │</p>
+          <div className="section-label">
+            <span className="section-dot" />
+            <h2>Paste Folder Structure</h2>
+          </div>
+          <p>Supports ASCII trees using ├──, └── and │</p>
         </div>
       </div>
 
@@ -71,21 +74,14 @@ function InputPanel({ setTreeData }) {
         onClick={() => textareaRef.current?.focus()}
       >
         <div className="drop-zone-hint">
-          <UploadCloud size={16} />
-          <span>Paste or drag plain text here</span>
+          <UploadCloud size={13} />
+          <span>Drag & drop text</span>
         </div>
 
         <textarea
           ref={textareaRef}
           className="structure-textarea"
-          placeholder={`my-app/
-├── public/
-│   └── favicon.ico
-├── src/
-│   ├── components/
-│   │   └── Navbar.jsx
-│   └── App.jsx
-└── package.json`}
+          placeholder={`my-app/\n├── public/\n│   └── favicon.ico\n├── src/\n│   ├── components/\n│   │   └── Navbar.jsx\n│   └── App.jsx\n└── package.json`}
           value={text}
           onChange={(e) => setText(e.target.value)}
         />

@@ -12,7 +12,10 @@ function ScaffoldOptions({
     <div className="scaffold-options-card">
       <div className="section-head">
         <div>
-          <h2>Scaffold Presets</h2>
+          <div className="section-label">
+            <span className="section-dot" />
+            <h2>Scaffold Presets</h2>
+          </div>
           <p>Merge ready-made starter files into the parsed structure</p>
         </div>
       </div>
