@@ -343,4 +343,4 @@ CSE Student • Full-Stack Builder • AI Explorer
 If this helped you — star the repo.
 
 If it broke — open an issue 😄
-Hunting for bugs in my own project🥹
+Hunting for bugs in my own project🥹 What hypocracy
