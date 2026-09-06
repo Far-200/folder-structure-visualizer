@@ -16,7 +16,7 @@ Paste a structure → visualize it → export a working project.
 
 ### Working
 
-![Example Use](assets/Demo.gif)
+![Folder Structure Visualizer Demo](./assets/Demo.gif)
 
 ### Search Features
 
